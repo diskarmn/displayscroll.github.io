@@ -1,0 +1,27 @@
+.wadah{
+    width:400px;
+    height:200px;
+    margin:auto;
+    overflow: scroll;
+}
+.wadah::-webkit-scrollbar {
+width: 20px;
+}
+.wadah::-webkit-scrollbar-track {
+background-color: transparent;
+}
+.gambar{
+    height:100%;
+    width:100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.gambar:nth-child(1){
+    background-image: url(3.png);
+}
+.gambar:nth-child(2){
+    background-image: url(4.png);
+}
+.gambar:nth-child(3){
+    background-image: url(5.jpg);
+}

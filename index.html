@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+            font-family: Arial, Helvetica, sans-serif;
+            box-sizing: border-box;
+            background-size: cover;
+            background-repeat: no-repeat;
+            transition: .3s;
+        }
+        .container{
+            min-height: 100vh;
+            width:100%;
+            display: grid;
+            grid-template-areas:"header"
+                                "main"
+                                "layer"
+                                "footer";
+            grid-template-rows: 2fr 2fr 2.3fr .5fr;
+            grid-template-columns: 1fr;
+        }
+        nav, header, main, footer, .gmain{
+            display: flex;
+        }
+        nav{
+            justify-content: space-around;
+            height:100px;
+            align-items: center;
+        }
+        nav a{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding:10px 20px;
+            font-size: 120%;
+            width:max-content;
+            height:max-content;
+            border:none;
+            background-color:rgba(189, 147, 139, 0.432);
+            font-weight: bold;
+            color:rgb(22, 12, 2);
+            text-decoration: none;
+        }
+        nav a:hover{
+            outline: 3px solid rgb(22, 12, 2);
+            background-color: rgba(189, 147, 139, 0);
+            text-shadow: 0 0 3px white;
+            box-shadow:inset 0 0 4px white;
+        }
+        header h1{
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+            display:flex;
+            font-size: 250%;
+            color:rgb(22, 12, 2);
+            text-shadow: 0 0 2px whitesmoke;
+        }
+        header{
+            grid-area: header;
+            flex-direction: column;
+            background-image: url(3.png);
+            background-position: center center;
+        }
+        main{
+            grid-area: main;
+            justify-content:space-between; 
+            background-color: rgba(255, 237, 233, 0.651);    
+        }
+        .identitas{
+            width:max-content;
+            margin:auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .identitas img{
+            width:200px;
+            align-self: center;
+            justify-self: center;
+        }
+        .identitas table{
+            width:70%;
+            margin-top:30px;
+            font-weight: bold;
+        }
+        .penjelasan{
+            width:75%;
+        }
+        main span{
+            margin:30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 120%;
+        }
+        .chara{
+            display:grid;
+            grid-template-columns: repeat(auto-fit, 150px);
+            padding:30px;
+            grid-gap: 40px;
+            
+        }
+        .gmain{
+            height:150px;
+            align-items: flex-end;
+            justify-content: center;
+        }
+        .gmain h1{
+            color:white;
+            font-size: 80%;
+            text-shadow: 0 0 3px black;
+            opacity: 0;
+        }
+        .gmain:hover h1{
+            opacity: 1;
+        }
+        .gmain:hover{
+            transform: scale(1.2);
+        }
+        .gmain:nth-child(1){
+            background-image: url(rico.jpg);
+        }
+        .gmain:nth-child(2){
+            background-image: url(reg.jpg);
+        }
+        .gmain:nth-child(3){
+            background-image: url(nanachi.jpg);
+        }
+        .gmain:nth-child(4){
+            background-image: url(prushka.jpg);
+        }
+        .gmain:nth-child(5){
+            background-image: url(bondrewd.jpg);
+        }
+        .gmain:nth-child(6){
+            background-image: url(lyza.jpg);
+        }
+        .gmain:nth-child(7){
+            background-image: url(ozen.jpg);
+        }
+
+        .layer{
+            grid-area: layer;
+            height: auto;  
+        }
+
+        footer{
+            grid-area: footer;
+            background-color: black;
+            justify-content: center;
+            align-items: center;
+            color:white;
+        }
+
+        .wadah{
+            width:100%;
+            height:100%;
+            overflow: scroll;
+            white-space: nowrap;
+        }
+        .gambar{
+            height:100%;
+            width:100%;
+            display: inline-block;
+            background-position: center center;
+            color:white;
+            text-shadow: 0 0 3px black;
+            text-align: center;
+            padding-top:10px;
+            font-size: 150%;
+        }
+        .gambar:nth-child(1){
+            background-image: url(la1.png);
+        }
+        .gambar:nth-child(2){
+            background-image: url(la2.jpg);
+        }
+        .gambar:nth-child(3){
+            background-image: url(la3.jpg);
+        } 
+        .gambar:nth-child(4){
+            background-image: url(la4.jpg);
+        } 
+        .gambar:nth-child(5){
+            background-image: url(la5.jpg);
+        } 
+        .gambar:nth-child(6){
+            background-image: url(la6.jpg);
+        } 
+        @media only screen and (max-width: 768px) {
+            .container{
+                min-height: 100vh;
+                width: auto;
+                grid-template-areas:"header"
+                                    "main"
+                                    "layer"
+                                    "footer";
+                grid-template-rows: .5fr 2fr .4fr .15fr;
+                grid-template-columns: 1fr;
+            }
+            nav a{
+                font-size: 80%;
+            }
+            .penjelasan{
+                width:100%;
+            }   
+            .chara{
+                padding:30px;
+                grid-gap: 20px;
+                grid-template-columns: repeat(auto-fit, 80px);
+            }
+            .gmain{
+            height:80px;
+            }
+            main{
+                justify-content: none;
+                flex-direction: column;
+            }
+            main span{
+                font-size: 100%;
+            }
+            .identitas img{
+            width:100px;
+            }
+            .identitas{
+                margin-top: 30px;
+            }
+            .gambar{
+                font-size: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <header>
+            <nav>
+                <a href="#penjelasan">About</a>
+                <a href="#chara">Chara</a>
+                <a href="#layer">Layer of Abyss</a>
+            
+            </nav>
+            <h1>Made In Abyss</h1>
+        </header>
+        <main class="m1">
+            <div class="identitas">
+                <img src="1.jpg">
+                <table>
+                    <tr>
+                        <td>name</td>
+                        <td>:</td>
+                        <td>Made In Abyss</td>
+                    </tr>
+                    <tr>
+                        <td>genre</td>
+                        <td>:</td>
+                        <td>adventure,mystery</td>
+                    </tr>
+                    <tr>
+                        <td>kategori</td>
+                        <td>:</td>
+                        <td>seinen</td>
+                    </tr>
+                </table>
+             </div>
+           <div class="penjelasan" id="penjelasan">
+                <span> 
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Sit, expedita corporis necessitatibus accusantium vitae 
+                magni aspernatur magnam eum quam non voluptatum dolorum, distinctio
+                laudantium? Pariatur magni earum fugit deleniti quis?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Sit, expedita corporis necessitatibus accusantium vitae 
+                magni aspernatur magnam eum quam non voluptatum dolorum, distinctio
+                laudantium? Pariatur magni earum fugit deleniti quis?
+                </span>
+                <div class="chara" id="chara">
+                    <div class="gmain"><h1>RICO</h1></div>
+                    <div class="gmain"><h1>REG</h1></div>
+                    <div class="gmain"><h1>NANACHI</h1></div>
+                    <div class="gmain"><h1>PRUSHKA</h1></div>
+                    <div class="gmain"><h1>BONDREWD</h1></div>
+                    <div class="gmain"><h1>LYZA</h1></div>
+                    <div class="gmain"><h1>OZEN</h1></div>
+                </div>
+            </div>   
+        </main>
+        <div class="layer" id="layer">
+            <div class="wadah">
+                <div class="gambar">layer 1</div>
+                <div class="gambar">layer 2</div>
+                <div class="gambar">layer 3</div>
+                <div class="gambar">layer 4</div>
+                <div class="gambar">layer 5</div>
+                <div class="gambar">layer 6</div>
+            </div>
+         </div>
+         <footer>foooter</footer>
+    </div>
+    
+</body>
+</html>
